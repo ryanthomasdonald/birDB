@@ -1,0 +1,17 @@
+<div class="cdf-category side-bar-widget">
+    <div class="widget-title mb40">
+        <h2>Following</h2>
+    </div>
+    <!-- title -->
+    <div class="cdf-category-list ul-li ul-li-block">
+        <ul class="list-group">
+    <% if (following.length > 0) { %>
+        <% following.forEach(user => { %>
+        <li class="list-group-item"><a href="/user/<%= user.id %> "><%= user.username %> </a></li>
+        <% }) %>
+    <% } else { %>
+        <li class="list-group-item"><a href="#">Not following any users!</a></li>
+    <% } %>
+    </ul>
+    </div>
+</div>

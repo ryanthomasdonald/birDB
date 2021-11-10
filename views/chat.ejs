@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <%- include ('partials/meta.ejs') %>
+    <title>birDB | Tweetr</title>
+</head>
+<%- include ('partials/header.ejs') %>
+
+<body>
+    <div class="breadcrumb-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="cdf-breadcrumb ul-li text-center">
+                    <div class="section-title">
+                        <span>welcome to the chat!</span>
+                        <h2>tweetr</h2>
+                        <strong>tweetr</strong>
+                        
+                    </div>
+                    <!-- <div class="font" style="color: white; font-size: 65px;" >Tweetr</div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="container  font text-green">
+            <div class="row ">
+                <div class="col-sm-12 ">
+                    <article class="chat justify-content-center ">
+                        <header class="chat-header">
+                            
+                            <div class="h3 chat-title"></div><!-- chat-title -->
+                        </header><!-- chat-header -->
+                        
+                        <form name="chatForm" class="form-horizontal chat-form">
+                            <div class="form-group hidden">
+                                <label for="chat-username" class="col-sm-2 control-label">logged in as:</label>
+                                <div class="col-sm-3 mb-3" >
+                                    <input  type="text" class="form-control" id="chat-username" value="<%= username %>" required disabled
+                                        placeholder="Enter your name"> <a class="text-green text-end" href="/logout">logout and change user</a>
+                                </div><!-- col-sm-10 -->
+                            </div><!-- form-group -->
+                            <div class="panel panel-default chat-box">
+                                <div class="panel-body chat-display ">
+                                </div><!-- panel-body -->
+                            </div><!-- panel-default -->
+                            <div class="form-group">
+                                
+                                <div class="col-sm-12">
+                                    <div class="input-group">
+                                        <input type="text" placeholder="Enter a message"
+                                            class="form-control" id="chat-message" rows="2" autocomplete="off" required>
+                                        <span class="input-group-btn">
+                                            <button id="chat-submit" class="btn bg-green button" style="color: white;" type="submit">send</button>
+                                        </span>
+                                    </div><!-- input-group -->
+                                </div><!-- col-sm-10 -->
+                            </div><!-- form-group -->
+                        </form>
+                    </article><!-- article -->
+                </div><!-- col-sm-12 -->
+            </div><!-- row -->
+        </div><!-- container -->
+        
+    
+
+    
+    
+        <div class="row buffer"> </div>
+	
+	<!-- main js -->
+	
+    <%- include ('partials/footer.ejs') %>
+    <%- include ('partials/scripts.ejs') %>
+    <script src="/js/chatClient.js"></script>  
+
+
+
+</body>
+</html>

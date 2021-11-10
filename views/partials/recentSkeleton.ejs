@@ -1,0 +1,23 @@
+<div class="recent-post side-bar-widget">
+    <div class="widget-title mb20">
+        <h2>Recent Posts</h2>
+    </div>
+    <!-- title -->
+    <div class="recent-post ul-li-block">
+        <ul>
+            <% for( let i = 0; i < recentPosts.length; i++ ) { %>
+                <li>
+                    <div class="cdf-image pull-left mr12">
+                        <img src="<%= recentPosts[i].imgURL %>" width="70px" alt="">
+                        <div class="cdf-icon"><i class="icon_link"></i></div>
+                        <div class="ovrly"></div>
+                    </div>
+                    <div class="cdf-title mb15"><br><br><h2><a href="/post/<%= recentPosts[i].id %>"><%= recentPosts[i].title %> </a></h2></div>
+                    <ul class="post-meta">
+                        <li><a href="#"><%= dates[i].month %> - <%= dates[i].day %>   </a> <a href="/user/<%= recentPosts[i].userID %> "><%= usernames[i] %> </a></li>
+                    </ul>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+</div>

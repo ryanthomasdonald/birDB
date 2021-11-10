@@ -1,0 +1,18 @@
+<% for( let i = 0; i < recentPosts.length; i++ ) { %>
+    <article class="mb80">
+        <div class="cdf-post relative pl70">
+            <div class="cdf-image"><img src="<%= recentPosts[i].imgURL %>" width="650px" height="auto" alt="">
+                <div class="cdf-meta">
+                    <ul class="post-meta">
+                        <li ><a href="#"><%= dates[i].day %>  <%= dates[i].month %></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cdf-content pt20 pl50">
+                <div class="cdf-title mb15"><h2><a href="/post/<%= recentPosts[i].id %>"><%= recentPosts[i].title %></a></h2></div>
+                <div class="cdf-text"><p><a href="/user/<%= recentPosts[i].userID %>"><%= usernames[i] %></a></p></div>
+                <div class="cdf-btn cdf-btn-one mt20"><a href="/post/<%= recentPosts[i].id %>">read more</a></div>
+            </div>
+        </div>
+    </article>
+ <% } %>

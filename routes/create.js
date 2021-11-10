@@ -25,16 +25,13 @@ router.get("/create", gatekeeper, async (req, res) => {
     )
 })
 
-router.post('/create', gatekeeper, (req, res, next) => {
+router.post('/create', gatekeeper, (req, res) => {
     let userID = req.user.id
     let form = formidable({multiples: true, uploadDir: __dirname})
     // const form = new formidable.IncomingForm();
     // let uploadFolder = path.join(__dirname, "../public", "files")
     // form.uploadDir = uploadFolder
     form.parse(req, (err, fields, files) => {
-        if (err) {
-            next()
-        }
         // await db.posts.create({title: fields.title, commonName: fields.common, scientificName: fields.scientific, location: fields.location, precipitation: fields.precip, temperature: fields.temp, cloudCover: fields.cloud, observation: fields.observation, likes: "0", userID: userID, imgURL: "www.bird.com"})
         cloudinary.uploader.upload(files.upload.filepath, async result => {
             // console.log("this is the result", result)
